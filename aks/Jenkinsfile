@@ -4,6 +4,8 @@ node {
 	// --------------------------- -------------CONFIGURATION -------------------------------------------------------
 
     def FORGE_CREDENTIALS_ID = "forge-git-password"
+
+    def pwd = ""
       
     stage('Clone repository') {
         /* Let's make sure we have the repository cloned to our workspace */
@@ -16,9 +18,17 @@ node {
         ]){
 
             echo "$PASSWORD"
+            pwd="$PASSWORD"
+
         }
     }
 
+    stage('log') {
+        echo "$pwd"
+        echo "$env[$FORGE_CREDENTIALS_ID]"
+        def cred = "$env[$FORGE_CREDENTIALS_ID]"
+        echo "$cred['PASSWORD']"
+    }
     
  
 
