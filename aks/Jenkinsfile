@@ -3,7 +3,7 @@ node {
     // --------------------------- DO NOT PUSH CHANGES IN THE FOLLOWING SECTION -------------------------------------
 	// --------------------------- -------------CONFIGURATION -------------------------------------------------------
 
-
+    def FORGE_CREDENTIALS_ID = "forge-git-password"
       
     stage('Clone repository') {
         /* Let's make sure we have the repository cloned to our workspace */
