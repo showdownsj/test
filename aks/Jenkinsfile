@@ -17,17 +17,15 @@ node {
             usernamePassword(credentialsId: FORGE_CREDENTIALS_ID, usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD'),
         ]){
 
-            echo "$PASSWORD"
-            pwd="$PASSWORD"
+            echo "$USERNAME"
+            pwd="$USERNAME"
 
         }
     }
 
     stage('log') {
         echo "$pwd"
-        echo "$env[$FORGE_CREDENTIALS_ID]"
-        def cred = "$env[$FORGE_CREDENTIALS_ID]"
-        echo "$cred['PASSWORD']"
+
     }
     
  
