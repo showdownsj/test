@@ -1,0 +1,26 @@
+node {
+    
+    // --------------------------- DO NOT PUSH CHANGES IN THE FOLLOWING SECTION -------------------------------------
+	// --------------------------- -------------CONFIGURATION -------------------------------------------------------
+
+
+      
+    stage('Clone repository') {
+        /* Let's make sure we have the repository cloned to our workspace */
+        checkout scm
+    }
+
+    stage('Install Dependencies') {
+        withCredentials([
+            usernamePassword(credentialsId: FORGE_CREDENTIALS_ID, usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD'),
+        ]){
+
+            echo "$PASSWORD"
+        }
+    }
+
+    
+ 
+
+
+}
